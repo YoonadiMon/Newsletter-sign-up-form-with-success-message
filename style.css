@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: hsl(235, 18%, 26%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+body #wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body #wrapper #card {
+  background: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: clamp(200px, auto, 400px);
+  padding: 20px 20px 20px 50px;
+  border-radius: 8px;
+}
+body #wrapper #card #left {
+  flex: 1;
+  margin-right: 55px;
+}
+body #wrapper #card #left h1 {
+  font-size: 3.9rem;
+  color: hsl(234, 29%, 20%);
+  margin-bottom: 30px;
+}
+body #wrapper #card #left p {
+  margin-bottom: 20px;
+}
+body #wrapper #card #left ul {
+  margin-bottom: 40px;
+}
+body #wrapper #card #left ul li {
+  list-style: inside url(assets/images/icon-list.svg);
+  line-height: 35px;
+}
+body #wrapper #card #left #emailEntry {
+  display: block;
+  margin-bottom: 25px;
+}
+body #wrapper #card #left #emailEntry label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+body #wrapper #card #left #emailEntry input {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  padding: 10px;
+  border: solid hsl(231, 7%, 60%) 0.1rem;
+}
+body #wrapper #card #left button {
+  background: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  padding: 10px 25px;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+}
+body #wrapper #card #right {
+  flex: 1;
+}
+body #wrapper #card #right img {
+  width: 100%;
+}
+body .attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  bottom: 5px;
+}
+body .attribution a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+body .attribution a:hover {
+  color: hsl(227, 16%, 83%);
+}/*# sourceMappingURL=style.css.map */
