@@ -1,0 +1,232 @@
+$DarkSlateGrey: hsl(234, 29%, 20%);
+$CharcoalGrey: hsl(235, 18%, 26%);
+$Grey: hsl(231, 7%, 60%);
+$White: hsl(0, 0%, 100%);
+
+@mixin flexCenter($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+@mixin marginBot($px) {
+  margin-bottom: $px;
+}
+
+@mixin inputSubmit {
+  width: 100%;
+  height: clamp(20px, 35px, 50px);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: $CharcoalGrey;
+  @include flexCenter(column);
+  height: 100vh ;
+
+  #wrapper {
+    
+    #card {
+      background: $White;
+      @include flexCenter(row);
+      width: fit-content;
+      height: (80%, auto ,100%);
+      padding: 20px 20px 20px 50px;
+      border-radius: 12px;
+  
+      #left {
+        flex: 1;
+        width: 100%;
+        margin-right: 55px;
+
+        h1 {
+          font-size: 3rem;
+          color: $DarkSlateGrey;
+          @include marginBot(30px);
+        }
+        p {
+          @include marginBot(20px);
+        }
+
+        ul {
+          @include marginBot(40px);
+
+          li {
+            list-style: inside url(assets/images/icon-list.svg);
+            line-height: 2.2rem;
+          }
+        }
+
+        #emailEntry {
+          display: block;
+          @include marginBot(25px);
+
+          label {
+            display: block;
+            font-weight: 700;
+            @include marginBot(10px);
+          }
+
+          input {
+            @include inputSubmit();
+            padding: 10px;
+            border: solid $Grey 0.1rem;
+          }
+        }
+
+        button {
+          background: $DarkSlateGrey;
+          color: $White;
+          padding: 10px 25px;
+          @include inputSubmit();
+          border: none;
+        }
+      }
+
+      #right {
+        flex: 0.9;
+        height: 100%;
+        #desktop {
+          height: 100%;
+          width: 100%;
+        }
+        #mobile {
+          display: none;
+        }
+
+      }
+  }
+  
+  }
+  
+
+  .attribution { 
+    font-size: 0.8rem; 
+    text-align: center; 
+    color: $White;
+    position: absolute;
+    bottom: 5px;
+  };
+  .attribution a {
+    color: $White;
+    text-decoration: none;
+    &:hover {
+      color: hsl(227, 16%, 83%);
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  body { 
+    #wrapper {
+      height: 70%;
+      width: 60%;
+      #card {
+        height: 100%;
+        #left {
+          height: 100%;
+          h1 {
+            @include marginBot(20px);
+            font-size: 2.3rem;
+          }
+          p {
+            @include marginBot(15px);
+          }
+          ul {
+            @include marginBot(20px);
+            li {
+              font-size: 0.9rem;
+            }
+          }
+        
+          #emailEntry {
+            @include marginBot(15px);
+        
+            label {
+              @include marginBot(5px);
+            }
+          }
+
+          button {
+            font-size: 0.8rem;
+            text-align: center;
+            vertical-align: middle;
+          }
+          
+          #right {
+            #sign-up-mobile {
+              display: none;
+            }
+    
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body { 
+    background: $White;
+    width: fit-content;
+    height: fit-content;
+    #wrapper {
+      width: 100%;
+      #card {
+        flex-direction: column-reverse;
+        padding: 0;
+        #left {
+          width: 100%;
+          padding: 20px 10px;
+          margin: 0;
+
+          ul {
+            @include marginBot(30px);
+            li {
+              font-size: 1rem;
+            }
+          }
+
+          #emailEntry {
+            @include marginBot(25px);
+          }
+        }
+        #right {
+          width: 100%;
+
+          #desktop {
+            display: none;
+          }
+          #mobile {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+    }
+
+    .attribution { 
+      color: $DarkSlateGrey;
+      position: relative
+    };
+    .attribution a {
+      color: $CharcoalGrey;
+      &:hover {
+        color: hsl(227, 55%, 25%);
+      }
+    }
+  }
+}

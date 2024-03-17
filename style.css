@@ -17,26 +17,25 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-body #wrapper {
-  width: -moz-fit-content;
-  width: fit-content;
-}
 body #wrapper #card {
   background: hsl(0, 0%, 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: clamp(200px, auto, 400px);
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 80%, auto, 100%;
   padding: 20px 20px 20px 50px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 body #wrapper #card #left {
   flex: 1;
+  width: 100%;
   margin-right: 55px;
 }
 body #wrapper #card #left h1 {
-  font-size: 3.9rem;
+  font-size: 3rem;
   color: hsl(234, 29%, 20%);
   margin-bottom: 30px;
 }
@@ -48,7 +47,7 @@ body #wrapper #card #left ul {
 }
 body #wrapper #card #left ul li {
   list-style: inside url(assets/images/icon-list.svg);
-  line-height: 35px;
+  line-height: 2.2rem;
 }
 body #wrapper #card #left #emailEntry {
   display: block;
@@ -61,8 +60,9 @@ body #wrapper #card #left #emailEntry label {
 }
 body #wrapper #card #left #emailEntry input {
   width: 100%;
-  height: 50px;
+  height: 35px;
   border-radius: 8px;
+  cursor: pointer;
   padding: 10px;
   border: solid hsl(231, 7%, 60%) 0.1rem;
 }
@@ -71,15 +71,21 @@ body #wrapper #card #left button {
   color: hsl(0, 0%, 100%);
   padding: 10px 25px;
   width: 100%;
-  height: 50px;
+  height: 35px;
   border-radius: 8px;
+  cursor: pointer;
   border: none;
 }
 body #wrapper #card #right {
-  flex: 1;
+  flex: 0.9;
+  height: 100%;
 }
-body #wrapper #card #right img {
+body #wrapper #card #right #desktop {
+  height: 100%;
   width: 100%;
+}
+body #wrapper #card #right #mobile {
+  display: none;
 }
 body .attribution {
   font-size: 0.8rem;
@@ -94,4 +100,94 @@ body .attribution a {
 }
 body .attribution a:hover {
   color: hsl(227, 16%, 83%);
+}
+
+@media only screen and (max-width: 1400px) {
+  body #wrapper {
+    height: 70%;
+    width: 60%;
+  }
+  body #wrapper #card {
+    height: 100%;
+  }
+  body #wrapper #card #left {
+    height: 100%;
+  }
+  body #wrapper #card #left h1 {
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+  }
+  body #wrapper #card #left p {
+    margin-bottom: 15px;
+  }
+  body #wrapper #card #left ul {
+    margin-bottom: 20px;
+  }
+  body #wrapper #card #left ul li {
+    font-size: 0.9rem;
+  }
+  body #wrapper #card #left #emailEntry {
+    margin-bottom: 15px;
+  }
+  body #wrapper #card #left #emailEntry label {
+    margin-bottom: 5px;
+  }
+  body #wrapper #card #left button {
+    font-size: 0.8rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  body #wrapper #card #left #right #sign-up-mobile {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body {
+    background: hsl(0, 0%, 100%);
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body #wrapper {
+    width: 100%;
+  }
+  body #wrapper #card {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  body #wrapper #card #left {
+    width: 100%;
+    padding: 20px 10px;
+    margin: 0;
+  }
+  body #wrapper #card #left ul {
+    margin-bottom: 30px;
+  }
+  body #wrapper #card #left ul li {
+    font-size: 1rem;
+  }
+  body #wrapper #card #left #emailEntry {
+    margin-bottom: 25px;
+  }
+  body #wrapper #card #right {
+    width: 100%;
+  }
+  body #wrapper #card #right #desktop {
+    display: none;
+  }
+  body #wrapper #card #right #mobile {
+    display: block;
+    width: 100%;
+  }
+  body .attribution {
+    color: hsl(234, 29%, 20%);
+    position: relative;
+  }
+  body .attribution a {
+    color: hsl(235, 18%, 26%);
+  }
+  body .attribution a:hover {
+    color: hsl(227, 55%, 25%);
+  }
 }/*# sourceMappingURL=style.css.map */
