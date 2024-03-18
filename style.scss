@@ -2,6 +2,7 @@ $DarkSlateGrey: hsl(234, 29%, 20%);
 $CharcoalGrey: hsl(235, 18%, 26%);
 $Grey: hsl(231, 7%, 60%);
 $White: hsl(0, 0%, 100%);
+$Tomato: hsl(4, 100%, 67%);
 
 @mixin flexCenter($direction) {
   display: flex;
@@ -37,15 +38,15 @@ body {
   height: 100vh ;
 
   #wrapper {
-    
+    display: flex;
+    justify-content: center;
     #card {
       background: $White;
       @include flexCenter(row);
       width: fit-content;
-      height: (80%, auto ,100%);
-      padding: 20px 20px 20px 50px;
+
       border-radius: 12px;
-  
+      padding: 20px 20px 20px 50px;
       #left {
         flex: 1;
         width: 100%;
@@ -74,9 +75,14 @@ body {
           @include marginBot(25px);
 
           label {
-            display: block;
+            display: flex;
+            justify-content: space-between;
             font-weight: 700;
             @include marginBot(10px);
+
+            #invalidEmail {
+              color: $Tomato;
+            }
           }
 
           input {
@@ -84,15 +90,14 @@ body {
             padding: 10px;
             border: solid $Grey 0.1rem;
           }
+          .errorInput {
+            color: $Tomato;
+            border: solid $Tomato 0.1rem;
+            background: hsla(4, 100%, 67%, 0.1);
+          }
         }
 
-        button {
-          background: $DarkSlateGrey;
-          color: $White;
-          padding: 10px 25px;
-          @include inputSubmit();
-          border: none;
-        }
+
       }
 
       #right {
@@ -107,14 +112,54 @@ body {
         }
 
       }
+    }
   }
-  
-  }
-  
+  #thanksCard {
+    @include flexCenter(column);
+    padding: 30px;
+    width: 400px;
+    background: $White;
+    border-radius: 12px;
+    #img {
+      display: grid;
+      width: 100%;
+      @include marginBot(30px);
+      img {
+        width: 50px;
+      }
+    }
 
-  .attribution { 
-    font-size: 0.8rem; 
-    text-align: center; 
+    h1 {
+      font-size: 3rem;
+      color: $DarkSlateGrey;
+      @include marginBot(20px);
+    }
+    p {
+      line-height: 1.5rem;
+      @include marginBot(30px);
+    }
+
+    button {
+      height: 2.8rem;
+      @include marginBot(10px);
+    }
+  }
+  button {
+    background: $DarkSlateGrey;
+    color: $White;
+    padding: 10px 25px;
+    @include inputSubmit();
+    border: none;
+    &:hover {
+      background: linear-gradient(90deg, #ff6d8a, $Tomato) ;
+      cursor: pointer;
+    }
+  }
+
+
+  .attribution {
+    font-size: 0.8rem;
+    text-align: center;
     color: $White;
     position: absolute;
     bottom: 5px;
@@ -129,7 +174,7 @@ body {
 }
 
 @media only screen and (max-width: 1400px) {
-  body { 
+  body {
     #wrapper {
       height: 70%;
       width: 60%;
@@ -150,10 +195,10 @@ body {
               font-size: 0.9rem;
             }
           }
-        
+
           #emailEntry {
             @include marginBot(15px);
-        
+
             label {
               @include marginBot(5px);
             }
@@ -164,12 +209,12 @@ body {
             text-align: center;
             vertical-align: middle;
           }
-          
+
           #right {
             #sign-up-mobile {
               display: none;
             }
-    
+
           }
         }
       }
@@ -178,7 +223,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  body { 
+  body {
     background: $White;
     width: fit-content;
     height: fit-content;
@@ -218,7 +263,7 @@ body {
 
     }
 
-    .attribution { 
+    .attribution {
       color: $DarkSlateGrey;
       position: relative
     };

@@ -17,6 +17,10 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+body #wrapper {
+  display: flex;
+  justify-content: center;
+}
 body #wrapper #card {
   background: hsl(0, 0%, 100%);
   display: flex;
@@ -25,9 +29,8 @@ body #wrapper #card {
   flex-direction: row;
   width: -moz-fit-content;
   width: fit-content;
-  height: 80%, auto, 100%;
-  padding: 20px 20px 20px 50px;
   border-radius: 12px;
+  padding: 20px 20px 20px 50px;
 }
 body #wrapper #card #left {
   flex: 1;
@@ -54,9 +57,13 @@ body #wrapper #card #left #emailEntry {
   margin-bottom: 25px;
 }
 body #wrapper #card #left #emailEntry label {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   font-weight: 700;
   margin-bottom: 10px;
+}
+body #wrapper #card #left #emailEntry label #invalidEmail {
+  color: hsl(4, 100%, 67%);
 }
 body #wrapper #card #left #emailEntry input {
   width: 100%;
@@ -66,15 +73,10 @@ body #wrapper #card #left #emailEntry input {
   padding: 10px;
   border: solid hsl(231, 7%, 60%) 0.1rem;
 }
-body #wrapper #card #left button {
-  background: hsl(234, 29%, 20%);
-  color: hsl(0, 0%, 100%);
-  padding: 10px 25px;
-  width: 100%;
-  height: 35px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
+body #wrapper #card #left #emailEntry .errorInput {
+  color: hsl(4, 100%, 67%);
+  border: solid hsl(4, 100%, 67%) 0.1rem;
+  background: hsla(4, 100%, 67%, 0.1);
 }
 body #wrapper #card #right {
   flex: 0.9;
@@ -86,6 +88,51 @@ body #wrapper #card #right #desktop {
 }
 body #wrapper #card #right #mobile {
   display: none;
+}
+body #thanksCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  width: 400px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 12px;
+}
+body #thanksCard #img {
+  display: grid;
+  width: 100%;
+  margin-bottom: 30px;
+}
+body #thanksCard #img img {
+  width: 50px;
+}
+body #thanksCard h1 {
+  font-size: 3rem;
+  color: hsl(234, 29%, 20%);
+  margin-bottom: 20px;
+}
+body #thanksCard p {
+  line-height: 1.5rem;
+  margin-bottom: 30px;
+}
+body #thanksCard button {
+  height: 2.8rem;
+  margin-bottom: 10px;
+}
+body button {
+  background: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  padding: 10px 25px;
+  width: 100%;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+body button:hover {
+  background: linear-gradient(90deg, #ff6d8a, hsl(4, 100%, 67%));
+  cursor: pointer;
 }
 body .attribution {
   font-size: 0.8rem;

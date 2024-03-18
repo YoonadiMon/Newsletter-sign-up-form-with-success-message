@@ -32,14 +32,14 @@
         </ul>
         
         <div id="emailEntry">
-          <label for="email">
+          <label for="email" id="EmailText">
             Email address
           </label>
-          <input type="text" name="email" placeholder="email@company.com">
+          <input type="text" name="email" placeholder="email@company.com" id="emailInput">
         </div>
 
 
-        <button>
+        <button onclick="checkValid()">
           Subscribe to monthly newsletter
         </button>
       </section>
@@ -56,5 +56,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Yoonadi Mon</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
